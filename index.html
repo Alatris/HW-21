@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="module">
+    import { curriedAdd } from './path/to/your/curriedAdd.js';
+
+    const addFirst = curriedAdd(1);
+    const addSecond = addFirst(2);
+    const result = addSecond(3);
+    console.log('Result:', result); // Должно вернуть 6
+
+    console.log(curriedAdd(1)(2)(3)); // Должно вернуть 6
+</script>
+<script src="js/curriedAdd.js"></script>
+<!--<script src="js/curriedDomain.js"></script>-->
+<!--<script src="js/modifyFunction.js"></script>-->
+<!--<script src="js/nestedFunctions.js"></script>-->
+</body>
+</html>
