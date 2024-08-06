@@ -11,11 +11,13 @@
 */
 
 function originalFunction(num) {
-    // code
+    return num * 4;
 }
 
 function modifyFunction(originalFunc, multiplier) {
-    // code
+    return function(num) {
+        return originalFunc(num) * multiplier;
+    };
 }
 
 // Приклад використання

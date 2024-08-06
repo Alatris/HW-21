@@ -9,18 +9,33 @@
 </head>
 <body>
 <script type="module">
-    import { curriedAdd } from './path/to/your/curriedAdd.js';
+    import { curriedAdd } from './js/curriedAdd.js';
 
     const addFirst = curriedAdd(1);
     const addSecond = addFirst(2);
     const result = addSecond(3);
-    console.log('Result:', result); // Должно вернуть 6
+    console.log('Result:', result);
 
-    console.log(curriedAdd(1)(2)(3)); // Должно вернуть 6
+    console.log(curriedAdd(1)(2)(3));
 </script>
-<script src="js/curriedAdd.js"></script>
-<!--<script src="js/curriedDomain.js"></script>-->
-<!--<script src="js/modifyFunction.js"></script>-->
-<!--<script src="js/nestedFunctions.js"></script>-->
+<script type="module">
+    import {curriedDomain} from './js/curriedDomain.js';
+    const protocolSetter = curriedDomain('https');
+    const domainNameSetter = protocolSetter('example');
+    const fullDomain = domainNameSetter('com');
+    console.log('Full Domain:', fullDomain);
+
+</script>
+<script type="module">
+    import {originalFunction, modifyFunction} from './js/modifyFunction.js';
+    const modifiedFunc = modifyFunction(originalFunction, 3)
+    console.log('Original function output for 4:', originalFunction(4))
+    console.log('Modified function output for 4:)', modifiedFunc(4))
+</script>
+<script type="module">
+    import {outerFunction} from './js/nestedFunctions.js';
+    const result = outerFunction(2)(3)(4);
+    console.log(result);
+</script>
 </body>
 </html>

@@ -14,12 +14,12 @@
  Задача вимагає глибокого розуміння концепцій функцій вищого порядку та замикань в JavaScript.
 */
 
-function curriedAdd(num1) {
-    return function (num2) {
-        return function (num3) {
-            return num1 + num2 + num3;
-        }
-    }
+function curriedAdd(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
 }
 
 const sum = curriedAdd(1)(2)(3);

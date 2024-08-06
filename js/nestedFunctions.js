@@ -1,3 +1,4 @@
+
 /*
 ! Завдання: Розробка Функції Трирівневої Вкладеності в JavaScript з Конкретною Операцією
 
@@ -15,13 +16,11 @@ deepInnerFunction повинна виконувати операцію множ�
 function outerFunction(arg1) {
     function innerFunction(arg2) {
         function deepInnerFunction(arg3) {
-            // code
+            return arg1 * arg2 * arg3;
         }
-
-        // code
+        return deepInnerFunction;
     }
-
-    // code
+    return innerFunction;
 }
 
 // const result = outerFunction(2)(3)(4)
@@ -52,3 +51,4 @@ function outerFunction(arg1) {
 */
 
 export { outerFunction }
+
